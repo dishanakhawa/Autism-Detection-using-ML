@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
 
 # -----------------------------
 # 1. Load Dataset
@@ -55,6 +56,8 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 print(f"Model Accuracy: {accuracy * 100:.2f}%")
+print("\nClassification Report:\n")
+print(classification_report(y_test, y_pred))
 
 # -----------------------------
 # 6. Save Model, Scaler, Encoders
